@@ -1,0 +1,1 @@
+# django-model-template-admin на основе django проекта \D3-Django\my_site\ с приложением p_library

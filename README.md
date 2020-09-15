@@ -29,27 +29,27 @@ D4.11
 ...>git clone https://github.com/SergeyNEgit/django-model-template-admin.git
 
 #переносим виртуальное окружение D3\django.venv в edx-py\
-# 1. активируем D3\django.venv и сохраняем его конфигурацию, деактивируем 
+1. активируем D3\django.venv и сохраняем его конфигурацию, деактивируем 
 edx-py> D3-Django\django.venv\Scripts\activate.bat
 edx-py> pip freeze >requirements.txt
 edx-py> D3-Django\django.venv\Scripts\deactivate.bat
 
-# 2. создаем D.venv и формируем эквивалент окружения D3\django.venv 
+2. создаем D.venv и формируем эквивалент окружения D3\django.venv 
 edx-py> python -m venv edx-py\D.venvdamp
 edx-py> pip install -r requirements.txt
 
-# 3. запускам сервер django в D4
+3. запускам сервер django в D4
 edx-py\D4-django-template-admin-library> python manage.py runserver
 
-# 4. описываем модель Publisher в файле 
-# p_library\models.py:
-#   …
-# class Publisher(models.Model):  
-#     name = models.TextField()  
-#     description = models.TextField()  
-#     def __str__(self):
-#         return self.name
-#   создаем описание миграции и проводим миграцию:
+4. описываем модель Publisher в файле 
+p_library\models.py:
+  …
+class Publisher(models.Model):  
+    name = models.TextField()  
+    description = models.TextField()  
+    def __str__(self):
+    
+  создаем описание миграции и проводим миграцию:
 …> python manage.py makemigrations
 	Migrations for 'p_library':
 	  p_library\migrations\0002_publisher.py
@@ -66,30 +66,30 @@ edx-py\D4-django-template-admin-library> python manage.py runserver
 	>>> p.objects.all()
 	<QuerySet []>
 	
-# 5. Добавляем панель Publisher в admin-ку
-# p_library/admin.py
-# …
-# @admin.register(Publisher)
-# class PublisherAdmin(admin.ModelAdmin):
-#   pass
+5. Добавляем панель Publisher в admin-ку
+p_library/admin.py
+…
+@admin.register(Publisher)
+class PublisherAdmin(admin.ModelAdmin):
+  pass
 
-# 6. Создаем запись в Publisher через admin-ку
+6. Создаем запись в Publisher через admin-ку
 	>>> 1|Детгиз|Книги для детей и их родителей
 
-# 7. Добавляем внешний ключ в описание Book, related_name='books' - чтобы можно было вызвать список книг: pablisher.books - 
-# в p_library/models.py. В качестве значения по умолчанию указываем "1" (Детгиз)
-# 
+7. Добавляем внешний ключ в описание Book, related_name='books' - чтобы можно было вызвать список книг: pablisher.books - 
+в p_library/models.py. В качестве значения по умолчанию указываем "1" (Детгиз)
+
 	>>>python manage.py migrate
 		Operations to perform:
 		  Apply all migrations: admin, auth, contenttypes, p_library, sessions
 		Running migrations:
 		  Applying p_library.0003_book_publisher... OK
-# редактируем список издательств и книг, указываем ссылки.
+редактируем список издательств и книг, указываем ссылки.
 
-# 8. Создаем шаблон publishers.html
-# используем явное определение html страницы, подключаем bootstrap4:
-#  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-# выводим издательства и книги, ими выпущенные:
+8. Создаем шаблон publishers.html
+используем явное определение html страницы, подключаем bootstrap4:
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+выводим издательства и книги, ими выпущенные:
     <p class="h3">Все издательства моей библиотеки <span class="badge badge-primary badge-pill">{{publishers|length}}</span></p>
     <ul class="list-group">
         {% for p in publishers %}
@@ -103,8 +103,8 @@ edx-py\D4-django-template-admin-library> python manage.py runserver
         {% endfor %}
     </ul>
 
-# 9. Обновляем репозиторий
+9. Обновляем репозиторий
 	(D.venv) …>git add .
 	(D.venv) …>git commit -m "D4.11 add . from \D3C:\ESNdocs\edX-Py\D4-django-model-template-admin"
-  (D.venv) …>git push -u origin master
+  	(D.venv) …>git push -u origin master
   

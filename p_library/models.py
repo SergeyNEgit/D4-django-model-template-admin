@@ -26,7 +26,7 @@ class Book(models.Model):
     copy_count = models.PositiveSmallIntegerField(default=1)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE, related_name='books')
-)
+
 
     def __str__(self):
         return self.title

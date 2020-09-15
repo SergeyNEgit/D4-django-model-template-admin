@@ -13,7 +13,20 @@ D4.11
 
 Источник <https://lms.skillfactory.ru/courses/course-v1:SkillFactory+PWS-10+10JAN2020/courseware/226708194f0142e791c496d1f6938dac/95ddb0171c104cad88160eadbf202327/11?activate_block_id=block-v1%3ASkillFactory%2BPWS-10%2B10JAN2020%2Btype%40vertical%2Bblock%40ec86c9ae065e48919ca2793c4f1b54f5> 
 
-создаем git репозиторий на основе django-project: ...\D3-Django\my_site
+Для просмотра решения нужно: 
+1) использовать окружение с установленным
+	Django==3.0.7 
+2) скопировать проект:
+	...>git clone https://github.com/SergeyNEgit/django-model-template-admin.git
+3) запустить сервер:
+	...>python manage.py runserver
+4) открыть:
+	http://127.0.0.1:8000/publishers/
+
+
+Далее - конспект решения.
+
+0. создаем git репозиторий на основе django-project: ...\D3-Django\my_site
 Источник <https://github.com/SergeyNEgit/django-model-template-admin> 
 
 ...>cd C:\ESNdocs\edX-Py\D3-Django\my_site
@@ -28,7 +41,7 @@ D4.11
 ...>cd ...\D4-django-template-admin
 ...>git clone https://github.com/SergeyNEgit/django-model-template-admin.git
 
-#переносим виртуальное окружение D3\django.venv в edx-py\
+переносим виртуальное окружение D3\django.venv в edx-py\
 1. активируем D3\django.venv и сохраняем его конфигурацию, деактивируем 
 edx-py> D3-Django\django.venv\Scripts\activate.bat
 edx-py> pip freeze >requirements.txt

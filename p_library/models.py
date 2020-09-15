@@ -10,6 +10,12 @@ class Author(models.Model):
     def __str__(self):
         return self.full_name
 
+class Publisher(models.Model):  
+    name = models.TextField()  
+    description = models.TextField()  
+
+    def __str__(self):
+        return self.name
 
 class Book(models.Model):  
     ISBN = models.CharField(max_length=13)  
@@ -19,17 +25,8 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     copy_count = models.PositiveSmallIntegerField(default=1)
     price = models.DecimalField(max_digits=12, decimal_places=2)
-
-    def __str__(self):
-        return self.title
-
-class Publisher(models.Model):  
-    name = models.TextField()  
-    description = models.TextField()  
-    year_release = models.SmallIntegerField()  
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    copy_count = models.PositiveSmallIntegerField(default=1)
-    price = models.DecimalField(max_digits=12, decimal_places=2)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE, related_name='books')
+)
 
     def __str__(self):
         return self.title

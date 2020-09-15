@@ -25,6 +25,9 @@ SECRET_KEY = 'z)82g*q)1q_^rw*9m=7ka_g(tu1n#f)i5s16jyi0nmo%p36y90'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# по совету @Vladimir - т.к. при формировании фикстур используется windows-1251
+DEFAULT_CHARSET = 'utf-8'
+
 ALLOWED_HOSTS = []
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import redirect
-from p_library.models import Book
+from p_library.models import Book, Publisher
 
 
 # Create your views here.
@@ -53,3 +53,13 @@ def book_decrement(request):
         return redirect('/index/')
     else:
         return redirect('/index/')
+
+
+def publishers_list(request):
+    template = loader.get_template('publishers.html')
+    books = Book.objects.all()
+    publishers = Publisher.objects.all()
+    biblio_data = {
+        "publishers": [(p, books.filter(publisher=p.id)) for p in publishers]
+    }
+    return HttpResponse(template.render(biblio_data, request))

@@ -1,0 +1,195 @@
+[
+    {
+        "model": "p_library.author",
+        "pk": 1,
+        "fields": {
+            "full_name": "Николай Васильевич Гоголь",
+            "birth_year": 1809,
+            "country": "RU"
+        }
+    },
+    {
+        "model": "p_library.author",
+        "pk": 2,
+        "fields": {
+            "full_name": "Пушкин Александр Сергеевич",
+            "birth_year": 1799,
+            "country": "RU"
+        }
+    },
+    {
+        "model": "p_library.author",
+        "pk": 3,
+        "fields": {
+            "full_name": "Тургенев Иван Сергеевич",
+            "birth_year": 1818,
+            "country": "RU"
+        }
+    },
+    {
+        "model": "p_library.author",
+        "pk": 4,
+        "fields": {
+            "full_name": "Douglas Adams",
+            "birth_year": 1952,
+            "country": "UK"
+        }
+    },
+    {
+        "model": "p_library.author",
+        "pk": 5,
+        "fields": {
+            "full_name": "Jerome David Salinger",
+            "birth_year": 1919,
+            "country": "US"
+        }
+    },
+    {
+        "model": "p_library.author",
+        "pk": 6,
+        "fields": {
+            "full_name": "Knut Hamsun",
+            "birth_year": 1859,
+            "country": "NO"
+        }
+    },
+    {
+        "model": "p_library.author",
+        "pk": 7,
+        "fields": {
+            "full_name": "Марк Лутц",
+            "birth_year": 1967,
+            "country": "ZA"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 1,
+        "fields": {
+            "ISBN": "9785170622207",
+            "title": "The Growth of the Soil",
+            "description": "Story of a man who settles and lives in rural Norway.",
+            "year_release": 1917,
+            "author": 6,
+            "copy_count": 2,
+            "price": "939.70"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 2,
+        "fields": {
+            "ISBN": "9785931240053",
+            "title": "Руслан и Людмила",
+            "description": "Волшебная сказка, вдохновлённая древнерусскими былинами.",
+            "year_release": 1820,
+            "author": 2,
+            "copy_count": 2,
+            "price": "789.15"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 3,
+        "fields": {
+            "ISBN": "9788588603271",
+            "title": "Ревизор",
+            "description": "Комедия в пяти действиях русского писателя Николая Васильевича Гоголя.",
+            "year_release": 1835,
+            "author": 1,
+            "copy_count": 2,
+            "price": "2284.66"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 4,
+        "fields": {
+            "ISBN": "9789755630311",
+            "title": "Медный всадник",
+            "description": "Поэма А. С. Пушкина.",
+            "year_release": 1837,
+            "author": 2,
+            "copy_count": 4,
+            "price": "1884.04"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 5,
+        "fields": {
+            "ISBN": "9785457325753",
+            "title": "Граф Нулин",
+            "description": "Короткая шуточная поэма, написанная Пушкиным всего за два утра 13 и 14 декабря 1825 года во время ссылки в Михайловском.",
+            "year_release": 1825,
+            "author": 2,
+            "copy_count": 2,
+            "price": "2170.84"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 6,
+        "fields": {
+            "ISBN": "9781072923893",
+            "title": "Новь",
+            "description": "Последний по времени и самый длинный роман Ивана Сергеевича Тургенева.",
+            "year_release": 1877,
+            "author": 3,
+            "copy_count": 4,
+            "price": "1644.10"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 7,
+        "fields": {
+            "ISBN": "9781447297017",
+            "title": "The Hitchhiker's Guide to the Galaxy",
+            "description": "Has become an international multi-media phenomenon",
+            "year_release": 1979,
+            "author": 4,
+            "copy_count": 3,
+            "price": "2044.16"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 8,
+        "fields": {
+            "ISBN": "9783036959542",
+            "title": "So Long, and Thanks for All the Fish",
+            "description": "Is the fourth book of the Hitchhiker's Guide to the Galaxy",
+            "year_release": 1984,
+            "author": 4,
+            "copy_count": 4,
+            "price": "2092.53"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 9,
+        "fields": {
+            "ISBN": "9781447297017",
+            "title": "The Catcher in the Rye",
+            "description": "It was originally intended for adults but is often read by adolescents for its themes of angst and alienation, and as a critique on superficiality in society.",
+            "year_release": 1951,
+            "author": 5,
+            "copy_count": 3,
+            "price": "803.60"
+        }
+    },
+    {
+        "model": "p_library.book",
+        "pk": 10,
+        "fields": {
+            "ISBN": "9785907144514",
+            "title": "Изучаем Python!",
+            "description": "Первый том пятого издания легендарной книги «Изучаем Python» Марка Лутца – всемирно известный учебник, написанный доступным языком и рассчитанный на индивидуальную скорость обучения и основанный на материалах учебных курсов, которые автор ведет уже на протяжении многих лет.",
+            "year_release": 2019,
+            "author": 7,
+            "copy_count": 1,
+            "price": "4500.00"
+        }
+    }
+]

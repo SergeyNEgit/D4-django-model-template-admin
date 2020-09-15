@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Publishers</title>
+</head>
+<body>
+    <p class="h3">Все издательства моей библиотеки <span class="badge badge-primary badge-pill">{{publishers|length}}</span></p>
+    <ul class="list-group">
+        {% for p in publishers %}
+            <li class="list-group-item h5">{{p.0.name}} - {{p.0.description}} 
+                <span class="badge badge-primary badge-pill">{{p.1|length}}</span></li>
+            <ul class="list-group-secondary">
+                {% for b in p.1 %}
+                    <li class="list-group-item h7">{{b.title}}, {{b.author}}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

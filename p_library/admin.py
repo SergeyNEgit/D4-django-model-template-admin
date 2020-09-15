@@ -5,7 +5,7 @@ from django.contrib import admin
 
 # [admin.site.register(item) for item in (Book, Author)]
 
-from p_library.models import Author, Book
+from p_library.models import Author, Book, Publisher
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
@@ -17,5 +17,12 @@ class BookAdmin(admin.ModelAdmin):
     def author_full_name(obj):
         return obj.author.full_name
 
-    list_display = ('title', 'author_full_name',)
-    fields = ('ISBN', 'title', 'description', 'year_release', 'author', 'price', 'copy_count')
+    # отображаемые в списке поля, включая "вычисляемое" author_full_name.
+    list_display = ('title', 'author_full_name', 'publisher')
+
+    # редактируемые поля. По умолчанию - все.
+    fields = ('ISBN', 'title', 'description', 'year_release', 'author', 'price', 'copy_count', 'publisher')
+
+@admin.register(Publisher)
+class PublisherAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
